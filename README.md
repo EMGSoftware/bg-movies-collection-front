@@ -30,10 +30,13 @@ Made with the amazing [NestJS](http://nestjs.com/) framework (heavily inspired f
 
 ## Installation:
 
-- _Git-clone_ both repositories:
-  - [https://github.com](https://github.com) Front-end
-  - [https://github.com](https://github.com) Back-end
-- _NPM-install_ them
-- _NPM-run-start_ each one.
+- _`Git-clone`_ both repositories at Github:
+  - [Front-end](https://github.com/EMGSoftware/bg-movies-collection-front)
+  - [Back-end](https://github.com/EMGSoftware/bg-movies-collection-back)
+- _`NPM-install`_ them
+- _`NPM-run-start`_ each one.
 - And we are ready to go!
-> By default the back-end is listening at port 3000 and the Front-end is listening at port 4200.
+> By default the back-end is listening at port 3000 and the Front-end is listening at port 4200. You can run the application at http://localhost:4200
+> 
+> Running locally Angular will serve it's own build artifacts with _ng serve_ at port 4200 and the back-end will just serve the API at port 3000. 
+> If you prefer the back-end to serve the full solution locally, you need to do a `ng build` in the front-end installation folder and copy the contents of `[front-end folder]/dist/movie-showcase` to `[back-end folder]/front`. After doing that you can access the application normally at http://localhost:3000. The Heroku deployment is configured that way. 
