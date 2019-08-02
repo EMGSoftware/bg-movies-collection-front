@@ -5,8 +5,11 @@ mat-toolbar {
 }
 
 .popcorn-icon {
-	width: 30px;
-	margin-right: 10px;
+	width: 50px;
+	margin-right: 15px;
+	position: relative;
+	top: 10px;
+	opacity: 0.9;
 }
 
 .popcorn-icon:hover {

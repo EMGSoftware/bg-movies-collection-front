@@ -41,7 +41,7 @@
 		</mat-card>
 	</div>
 
-	<div fxFlex="100" fxLayoutAlign="center center" fxLayout="column" *ngIf="!movie">
+	<div *ngIf="!movie && !(loading$ | async)" fxFlex="100" fxLayoutAlign="center center" fxLayout="column">
 		<h3>Movie not found</h3>
 		<button mat-raised-button (click)="back()">
 			<mat-icon>keyboard_arrow_left</mat-icon>

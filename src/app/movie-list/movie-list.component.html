@@ -39,7 +39,7 @@
 			</div>
 		</ng-container>
 		<ng-template #noItems>
-			<div fxFlex="100" fxLayoutAlign="center center">
+			<div fxFlex="100" fxLayoutAlign="center center" *ngIf="!(loading$ | async)">
 				<h3>Not matching movies found</h3>
 			</div>
 		</ng-template>

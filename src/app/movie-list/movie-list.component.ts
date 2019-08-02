@@ -14,6 +14,7 @@ import { environment } from '../../environments/environment'
 export class MovieListComponent implements OnInit, OnDestroy
 {
 	@ViewChild( 'searchBox', { static: true } ) searchBox: ElementRef
+	loading$: Observable<boolean>
 	movies$: Observable<Movie[]>
 	moviesFullList$: Observable<Movie[]>
 	moviesFilteredByGenre$: Observable<Movie[]>
@@ -30,6 +31,7 @@ export class MovieListComponent implements OnInit, OnDestroy
 
 	ngOnInit ()
 	{
+		this.loading$ = this.movieQuery.selectLoading()
 		this.moviesFullList$ = this.movieQuery.selectAll()
 		this.movies$ = this.moviesFullList$
 		this.moviesFilteredByGenre$ = this.moviesFullList$
@@ -46,6 +48,8 @@ export class MovieListComponent implements OnInit, OnDestroy
 						this.moviesFilteredByGenre$
 				)
 		).subscribe( data => this.movies$ = data )
+		
+		if ( document.getElementById( "start" ) ) document.getElementById( "start" ).style.display = 'none'
 	}
 
 	ngOnDestroy ()
