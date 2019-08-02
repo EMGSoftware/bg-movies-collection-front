@@ -1,0 +1,65 @@
+.container {
+	margin-left: 1vw;
+	margin-right: 1vw;
+}
+
+.movie-list {
+	padding: 5px;
+}
+
+.mat-toolbar {
+	font-size: 1.1em!important;
+}
+
+.search-box {
+	width: 30vw;
+}
+
+.genre-selector {
+	width: 20vw;
+}
+
+.mat-card:hover {
+	box-shadow: 0px 0px 3px 1px red;
+	position: relative;
+	top: -2px;
+}
+
+.mat-card {
+	cursor: default;
+}
+
+.mat-card-content {
+	max-height: 10vh;
+	height: 10vh;
+	overflow-y: auto;
+	padding-right: 5px;
+}
+
+.mat-chip {
+	cursor: pointer;
+	user-select: none;
+	min-height: 1.6em;
+}
+
+.mat-card-content::-webkit-scrollbar-track
+{
+	box-shadow: inset 0 0 4px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+.mat-card-content::-webkit-scrollbar
+{
+	width: 4px;
+	background-color: #F5F5F5;
+}
+
+.mat-card-content::-webkit-scrollbar-thumb
+{
+	background-color: #000000;
+}
+
+.search-icon {
+	position: relative;
+	top: 10px;
+}

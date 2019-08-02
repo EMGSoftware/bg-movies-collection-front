@@ -1,27 +1,39 @@
-# MovieShowcase
+# Movies Collection
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.4.
+## General Information:
 
-## Development server
+The solution is composed of two projects: A front-end application made with Angular and a simple back-end application made with NestJS.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### The Front-end
 
-## Code scaffolding
+The main page shows a list of movies where users can filter by one or more genres (Action, Comedy, etc.) and search for films just typing part of their names or descriptions.
+Under the movie title is the genre list. Clicking on one of the genres, toggles that specific genre and filters the movies list.
+Below the movie's cover there is a button named "More Details" that navigates to a page with some more information about that movie, including a short synopsis, rating and duration.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+#### Technologies used
 
-## Build
+- **Angular 8**
+  - Angular Material
+  - Angular Flex Layout
+  - Angular Animations
+  - RxJS
+  - SASS
+  - Lazy & Eager  Loading
+- **Akita** for state management
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### The Back-end
 
-## Running unit tests
+Made with the amazing [NestJS](http://nestjs.com/) framework (heavily inspired from Angular), it provides both the front-end build artifacts and the API endpoints needed to get the list of movies and cover images.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+> **You can road-test the full solution right now, kindly hosted by Heroku at [https://bg-moviescollection.herokuapp.com](https://bg-moviescollection.herokuapp.com)**
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Installation:
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- _Git-clone_ both repositories:
+  - [https://github.com](https://github.com) Front-end
+  - [https://github.com](https://github.com) Back-end
+- _NPM-install_ them
+- _NPM-run-start_ each one.
+- And we are ready to go!
+> By default the back-end is listening at port 3000 and the Front-end is listening at port 4200.

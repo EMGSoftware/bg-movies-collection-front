@@ -1,0 +1,47 @@
+<div fxFlex fxLayout="column" fxLayoutGap="10px" fxFlex="100" class="container">
+	<mat-toolbar color="accent" class="mat-elevation-z5" fxLayoutAlign="center center" fxLayoutGap="30px">
+		<mat-form-field fxFlex="30" fxFlex.xs="50" floatLabel="never">
+			<mat-icon class="search-icon" matSuffix aria-label="'Search Movies'">search</mat-icon>
+			<input #searchBox matInput placeholder="Search Movies" type="text"
+				matTooltip="Search movies by entering part of their name or description" aria-label="Search movies">
+		</mat-form-field>
+		<mat-form-field fxFlex="20" fxFlex.xs="50" floatLabel="never">
+			<mat-label>Filter by Genre</mat-label>
+			<mat-select (selectionChange)="genreSelectionChanged()" [(ngModel)]="selectedGenres"
+				matTooltip="Filter movies by selecting one or more genres" aria-label="Filter by genre" multiple>
+				<mat-option *ngFor="let item of availableGenres" [value]="item">{{ item }}</mat-option>
+			</mat-select>
+		</mat-form-field>
+	</mat-toolbar>
+
+	<div fxLayout="row wrap" *ngIf="movies$ | async as movies">
+		<ng-container *ngIf="movies.length; else noItems">
+			<div *ngFor="let item of movies" class="movie-list" fxFlex="25" fxFlex.md="33" fxFlex.sm="50"
+				fxFlex.xs="100" fxLayout="column">
+				<mat-card class="mat-elevation-z1">
+					<mat-card-header class="movie-title">
+						<mat-card-title>{{ item.name  }}</mat-card-title>
+						<mat-card-subtitle>
+							<mat-chip-list>
+								<mat-chip matTooltip="Show other movies with the same genre" (click)="toggleGenre (genre)" *ngFor="let genre of item.genres"><small>{{ genre }}</small></mat-chip>
+							</mat-chip-list>
+						</mat-card-subtitle>
+					</mat-card-header>
+					<img mat-card-image [src]="getImagePath (item)" alt="Movie cover">
+					<mat-card-actions>
+						<button fxFlex mat-button color="secondary" (click)="showDetails (item)"
+							matTooltip="Know more about this movie" aria-label="More details about this movie">
+							<mat-icon>theaters</mat-icon>
+							<span> More Details</span>
+						</button>
+					</mat-card-actions>
+				</mat-card>
+			</div>
+		</ng-container>
+		<ng-template #noItems>
+			<div fxFlex="100" fxLayoutAlign="center center">
+				<h3>Not matching movies found</h3>
+			</div>
+		</ng-template>
+	</div>
+</div>

@@ -1,0 +1,32 @@
+.container {
+	height: 80vh;
+	margin-left: 1vw;
+	margin-right: 1vw;
+	margin-top: 2vh;
+	cursor: default;
+}
+
+.movie-description {
+	margin-bottom: 10vh;
+	font-size: 1.2em;
+}
+
+.mat-card-actions {
+	margin-bottom: 0px;
+}
+
+.duration {
+	position: relative;
+    top: -6px;
+}
+
+.divider {
+	border: none;
+    height: 1px;
+	background-color: #333;
+	margin-top: 20px;
+}
+
+.genres {
+	margin-block-start: 0px;
+}

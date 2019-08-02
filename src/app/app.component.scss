@@ -1,0 +1,20 @@
+mat-toolbar {
+	position: sticky;
+	top: 0px;
+	z-index: 1000;
+}
+
+.popcorn-icon {
+	width: 30px;
+	margin-right: 10px;
+}
+
+.popcorn-icon:hover {
+	transform: rotate(360deg);
+	transition-duration: 0.4s;
+	transition-property: transform;
+}
+
+.title {
+	color: #fceeb8;
+}

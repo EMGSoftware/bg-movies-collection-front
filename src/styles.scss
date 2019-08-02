@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '@angular/material/prebuilt-themes/pink-bluegrey.css';
+
+.mat-toolbar.mat-accent {
+	background: darkred;
+	color: white;
+	border-radius: 0px 0px 4px 4px;
+}
+
+.mat-card-header-text  {
+	margin: 0px!important;
+}
+
+.mat-button, .mat-flat-button, .mat-icon-button, .mat-stroked-button  {
+	border: 1px solid #383838!important; 
+}
+
+body {
+	background-color: black;
+	color: white;
+}

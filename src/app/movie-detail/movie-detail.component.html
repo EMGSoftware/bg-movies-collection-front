@@ -1,0 +1,51 @@
+<div class="container" fxLayout="column">
+	<div *ngIf="movie" fxLayout="row" fxLayoutAlign="center center">
+		<mat-card fxFlex="100" fxFlex.xs="100" class="mat-elevation-z1">
+			<mat-card-header fxLayoutAlign="center center">
+				<mat-card-title>{{ movie.name  }}</mat-card-title>
+			</mat-card-header>
+			<img fxHide fxShow.xs mat-card-image [src]="getImagePath (movie)">
+			<mat-card-content fxLayout="row" fxLayoutGap="10px">
+				<img fxHide.xs [src]="getImagePath (movie)">
+				<div fxFlex="80" fxFlex.xs="100">
+					<p class="genres">
+						<small>{{ movie.genres.join (', ') }}</small>
+					</p>
+					<span class="movie-description">
+						{{movie.description }}
+					</span>
+					<hr class="divider">
+					<div fxLayout="row">
+						<div fxFlex="50" fxLayoutAlign="center center">
+							<p>
+								<star-rating [value]="movie.rate / 2" checkedcolor="orange" uncheckedcolor="gray"
+									size="24px" readonly="true">
+								</star-rating>
+								<span>rated {{ movie.rate }}<small> / 10</small></span>
+							</p>
+						</div>
+						<div fxFlex="50" fxLayoutAlign="center center">
+							<p>
+								<mat-icon>alarm</mat-icon><span class="duration"> {{ movie.length }}</span>
+							</p>
+						</div>
+					</div>
+				</div>
+			</mat-card-content>
+			<mat-card-actions fxLayoutAlign="end end">
+				<button mat-button color="secondary" aria-label="Return to Movie List" (click)="back()">
+					<mat-icon>keyboard_arrow_left</mat-icon>
+					<span>Return to Movie List</span>
+				</button>
+			</mat-card-actions>
+		</mat-card>
+	</div>
+
+	<div fxFlex="100" fxLayoutAlign="center center" fxLayout="column" *ngIf="!movie">
+		<h3>Movie not found</h3>
+		<button mat-raised-button (click)="back()">
+			<mat-icon>keyboard_arrow_left</mat-icon>
+			Return to Movie List
+		</button>
+	</div>
+</div>
