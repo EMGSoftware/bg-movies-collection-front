@@ -7,6 +7,7 @@ import { RatingModule } from 'ng-starrating';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MovieDetailRoutingModule } from './movie-detail-routing.module';
 import { RouterTestingModule } from '@angular/router/testing';
+import { Movie } from '../state/movie.model'
 
 describe( 'MovieDetailComponent', () =>
 {
@@ -41,11 +42,21 @@ describe( 'MovieDetailComponent', () =>
 		expect( component ).toBeTruthy();
 	} );
 
-	it( 'should render "Movie not found" in a h3 tag', () =>
+	it( 'should return a valid ImagePath for a movie', () =>
 	{
 		const fixture = TestBed.createComponent( MovieDetailComponent );
 		fixture.detectChanges();
-		const compiled = fixture.debugElement.nativeElement;
-		expect( compiled.querySelector( 'h3' ).textContent ).toContain( 'Movie not found' );
+		const testMovie: Movie =
+		{
+			id: null,
+			key: null,
+			name: null,
+			description: null,
+			genres: [],
+			length: null,
+			rate: null,
+			img: '[TestPath]'
+		}
+		expect( fixture.componentInstance.getImagePath( testMovie ) ).toContain('[TestPath]')
 	} );
 } );
